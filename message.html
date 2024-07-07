@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Us - NCP Vanguard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html" target="_blank">Home</a></li>
+                <li><a href="message.html" target="_blank">Message Us</a></li>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="user-greeting">
+            <img src="1719915499654%20(1).png" alt="NCP Logo" class="logo">
+            Hello <span id="user-name"></span>!
+        </div>
+    </header>
+
+    <section id="message" class="section">
+        <div class="container">
+            <h2>Message Us!</h2>
+            <form id="message-us" onsubmit="return handleFormSubmit(event)">
+                <table class="tables">
+                    <tr>
+                        <td><label for="ms-name">Your Name:</label></td>
+                        <td><input type="text" id="ms-name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ms-message">Your Message:</label></td>
+                        <td><textarea id="ms-message" rows="4" required></textarea></td>
+                    </tr>
+                </table>
+                <button class="ms-sub" type="submit" id="ms-submit">Submit</button>
+            </form>
+            <div id="submitted-info" class="result-container" style="display:none;">
+                <h3>Submitted Information:</h3>
+                <p><strong>Name:</strong> <span id="ms-result-name"></span></p>
+                <p><strong>Message:</strong> <span id="ms-result-message"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get the user's name from local storage
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('user-name').textContent = userName;
+        }
+
+        // Submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get values from the form
+            const name = document.getElementById('ms-name').value;
+            const message = document.getElementById('ms-message').value;
+
+            // Set values in the result container
+            document.getElementById('ms-result-name').textContent = name;
+            document.getElementById('ms-result-message').textContent = message;
+
+            // Display the result container
+            document.getElementById('submitted-info').style.display = 'block';
+
+            // Prepare email
+            const emailRecipient = 'ncpvanguard@gmail.com';
+            const emailSubject = 'Message from Website';
+            const emailBody = `Name: ${name}
+            Message: ${message}`;
+            const emailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailRecipient}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open Gmail
+            window.open(emailURL, '_blank');
+        }
+    </script>
+</body>
+</html>

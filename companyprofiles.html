@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profiles - NCP Vanguard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html" target="_blank">Home</a></li>
+                <li><a href="message.html" target="_blank">Message Us</a></li>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="user-greeting">
+            <img src="1719915499654%20(1).png" alt="NCP Logo" class="logo">
+            Hello <span id="user-name"></span>!
+        </div>
+    </header>
+
+    <section id="company-profiles" class="section company-profiles">
+        <div class="container">
+            <h2><b> NCP Profiles </b></h2>
+            <div class="scrollable-text">
+                <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam ex et dui dignissim cursus. Ut in pharetra purus. 
+                Phasellus luctus ligula nunc, non fermentum nisi fermentum vel. Pellentesque eleifend pellentesque leo, vitae mollis turpis iaculis nec. 
+                Pellentesque posuere nisl sed dolor gravida, eget molestie nulla posuere. In est augue, mollis id auctor sit amet, porta nec orci. 
+                Aenean pretium, massa eget accumsan consectetur, ante lectus maximus quam, ac tristique mi lacus nec odio.
+
+                Praesent dignissim diam quis tellus viverra, in feugiat risus eleifend. Sed eu sem a mi porta suscipit nec et ipsum. 
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                Donec at mi volutpat, molestie leo tincidunt, tristique orci. Donec fermentum facilisis mi vitae lacinia. 
+                Vivamus maximus velit sit amet mollis lobortis. Nunc velit sapien, fringilla nec tempus in, congue sed quam. 
+                Donec venenatis quam et volutpat volutpat. Pellentesque ac porta nunc, vitae pretium dolor. Aenean at tellus urna.
+                
+                Nullam sollicitudin ultrices dui sit amet vestibulum. Pellentesque in nulla vel augue porttitor fringilla. Nunc in finibus velit. 
+                Mauris condimentum pulvinar porttitor. Nullam a consectetur turpis, a sagittis arcu. Quisque eu leo ornare, ultrices dui nec, fermentum mi. 
+                Nulla vitae ligula lacinia, vulputate tortor ac, porta neque. In sit amet nibh nec justo tempus efficitur. Duis quis nisl sapien. 
+                Duis sit amet ligula nec lectus ullamcorper mattis. Duis vulputate vestibulum lorem, in vestibulum dolor convallis ultrices. 
+                Nullam justo ipsum, facilisis non diam sed, tempus mollis elit. Donec at massa ut massa viverra aliquet consequat et diam. 
+                Ut aliquet eros id placerat sollicitudin. Fusce nec varius mi. Duis tempor est non efficitur dictum.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-gallery-section">
+        <div class="container">
+            <div class="image-gallery">
+                <img src="https://hackernoon.com/images/big-tech-company-buildings-nmorzaovaon7h1j4xpm14a57.png" alt="Tech Company Building">
+                <img src="https://static2.gensler.com/uploads/hero_element/6460/thumb_desktop/thumbs/confidential-medical-devices_1024x576_01_1430781017_1024x576.jpg" alt="Medical Devices Building">
+                <img src="https://www.apleona.com/fileadmin/apleona.com/Bilder/Best_Practice/1280x540/apl_17_website_contenbild_wollfers_1280x540.jpg" alt="Apleona Building">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get the user's name from local storage
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('user-name').textContent = userName;
+        }
+    </script>
+</body>
+</html>

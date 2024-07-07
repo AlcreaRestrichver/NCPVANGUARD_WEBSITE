@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NCP Vanguard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html" target="_blank">Home</a></li>
+                <li><a href="message.html" target="_blank">Message Us</a></li>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="user-greeting">
+            <img src="1719915499654%20(1).png" alt="NCP Logo" class="logo">
+            Hello <span id="user-name"></span>!
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="button-container">
+                <a href="companyprofiles.html" target="_blank" class="styled-button">NCP Profiles</a>
+                <a href="message.html" target="_blank" class="styled-button">Message Us</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get the user's name from local storage
+        const userName = localStorage.getItem('userName');
+        if (userName) {
+            document.getElementById('user-name').textContent = userName;
+        }
+    </script>
+</body>
+</html>
